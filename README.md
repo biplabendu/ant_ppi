@@ -37,7 +37,7 @@ Supplementary Figure 1 (attach)
 
 Supplementary Figure 2 (attach)
 
-### Scripts to generate random networks
+### Scripts to generate random networks: [random_network_generator.pl](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/random_network_generator.pl) [split_networks.pl](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/split_networks.pl)
 
 Script needed two files to run
 
@@ -45,11 +45,11 @@ Script needed two files to run
 
 (II) List of interations which should be avoided. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file2.txt).
 
-`$ perl [random_network_generator.pl](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/random_network_generator.pl) file1.txt file2.txt > 100_random_networks`
+`$ perl random_network_generator.pl file1.txt file2.txt > 100_random_networks`
 
 Note that 100_random_networks will be a single file. To split the file 
 
-`$ perl [split_networks.pl](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/split_networks.pl) 100_random_networks`
+`$ perl split_networks.pl 100_random_networks`
 
 ## Issues & Contacts
 If you have any questions or requirement of any other data from our manuscript, please feel free to contact me (shishir.gupta@uni-wuerzburg.de) or [Prof. Dr. Thomas Dandekar](https://www.biozentrum.uni-wuerzburg.de/bioinfo/research/groups/funct-genomics-systems-biology/people/thomas-dandekar/) (dandekar@biozentrum.uni-wuerzburg.de).
