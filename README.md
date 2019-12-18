@@ -37,7 +37,8 @@ Supplementary Figure 1 (attach)
 
 Supplementary Figure 2 (attach)
 
-### Scripts to generate random networks: ##### [random_network_generator.pl](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/random_network_generator.pl) [split_networks.pl](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/split_networks.pl)
+### Scripts to generate random networks: 
+##### [random_network_generator.pl](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/random_network_generator.pl) [split_networks.pl](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/split_networks.pl)
 
 Script needed two files to run
 
