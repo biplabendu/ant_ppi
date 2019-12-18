@@ -50,3 +50,6 @@ Script needed two files to run
 Note that 100_random_networks will be a single file. To split the file 
 
 `$ perl split_networks.pl 100_random_networks`
+
+## Issues & Contacts
+If you have any questions or requirement of any other data from our manuscript, please feel free to contact me (shishir.gupta@uni-wuerzburg.de) or [Prof. Dr. Thomas Dandekar](https://www.biozentrum.uni-wuerzburg.de/bioinfo/research/groups/funct-genomics-systems-biology/people/thomas-dandekar/) (dandekar@biozentrum.uni-wuerzburg.de).
