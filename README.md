@@ -31,6 +31,11 @@ Functional over-repsentation molecular function analysis of *C. floridanus* prot
 
 Degree and orthology  of *C. floridanus* proteins present in the interactome. 
 
+#### [Supplementary Figures]
+
+Supplementary Figure 1
+
+Supplementary Figure 2
 
 ### [Script to generate random networks](https://github.com/ShishirGupta-Wu/aspergillus_ps/blob/supplementary_data/Additional%20file%202.pdf) -
 
