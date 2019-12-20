@@ -7,7 +7,7 @@ library("ggsci")
 library("ggpubr")
 library("scales")
 
-#import data
+#import input data
 data <- read_excel("file3.xlsx") #input file with cappic scores in each network
 p_values <- read_excel("file4.xlsx") #file with p-values calculated by Mann-Whitney U test
 
