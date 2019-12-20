@@ -60,7 +60,7 @@ Note that 100_random_networks will be a single file. To split the file
 
 [Script](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/densityplot_confidencesubsets.R) needed one file to run
 
-(I) Table with one column of confidence subset classifications and one column with confidence scores. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file10.xlsx
+(I) Table with one column of confidence subset classifications and one column with confidence scores. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file10.xlsx)
 
 #### Figure 3
 
