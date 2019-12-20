@@ -58,7 +58,7 @@ Note that 100_random_networks will be a single file. To split the file
 
 #### Supplementary Figure1 (network improvement)
 
-Script [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/assessment_of_network_improvement.R) needed two files to run
+[Script](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/assessment_of_network_improvement.R) needed two files to run
 
 (I) A table of proteins in each network with confidence scores. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file3.xlsx)
 
@@ -66,27 +66,27 @@ Script [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/assessment_
 
 #### Supplementary FigureX (mf similarity)
 
-Script [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/MF_comparison.R) needed one file to run
+[Script](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/MF_comparison.R) needed one file to run
 
-(I) A table with semantic similarity scores for each protein pair in PPI and randomly generated non-PPI networks. [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file5.xlsx)
+(I) A table with semantic similarity scores for each protein pair in PPI and randomly generated non-PPI networks. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file5.xlsx)
 
 #### Supplementary FigureX (topology vs. localization)
 
-Script [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/localization_hubs_bottlenecks.R) needed four files to run
+[Script](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/localization_hubs_bottlenecks.R) needed four files to run
 
-(I) A table with proteins classified according to being bottleneck or not, and their localization status (single vs. multiple). [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file6.xlsx)
+(I) A table with proteins classified according to being bottleneck or not, and their localization status (single vs. multiple). See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file6.xlsx)
 
-(II) A table with proteins classified according to being hub or not, and their localization status (single vs. multiple). [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file7.xlsx)
+(II) A table with proteins classified according to being hub or not, and their localization status (single vs. multiple). See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file7.xlsx)
 
-(III) A table with p-values calculated in the first part of the script for manual p-value addition to the figure [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file8.xlsx)
+(III) A table with p-values calculated in the first part of the script for manual p-value addition to the figure. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file8.xlsx)
 
-(IV) Exact numbers and percentages of single and multiple-localization in hubs, non-hubs, bottlenecks, non-bottlenecks [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file9.xlsx)
+(IV) Exact numbers and percentages of single and multiple-localization in hubs, non-hubs, bottlenecks, non-bottlenecks. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file9.xlsx)
 
 #### Figure X (density plot with confidence subsets in final interactome)
 
-Script [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/densityplot_confidencesubsets.R) needed one file to run
+[Script](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/densityplot_confidencesubsets.R) needed one file to run
 
-(I) Table with one column of confidence subset classifications and one column with confidence scores
+(I) Table with one column of confidence subset classifications and one column with confidence scores. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file10.xlsx
 
 ## Issues & Contacts
 If you have any questions or requirement of any other data from our manuscript, please feel free to contact me (shishir.gupta@uni-wuerzburg.de) or [Prof. Dr. Thomas Dandekar](https://www.biozentrum.uni-wuerzburg.de/bioinfo/research/groups/funct-genomics-systems-biology/people/thomas-dandekar/) (dandekar@biozentrum.uni-wuerzburg.de).
