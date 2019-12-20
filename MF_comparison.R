@@ -1,4 +1,4 @@
-##Comment3: Do interacting proteins have higher MF similarity than non-interacting proteins?
+##Comparison of semantic similarity of molecular functions of interating vs. non-interacting proteins?
 setwd("path/to/inputfolder")
 
 library("readxl")
@@ -22,7 +22,7 @@ a<-group_by(my_data, cluster) %>%
 b<-a %>% data.frame #can be used to see the whole data frame
 
 
-#We want to know if there is any significant difference between average gogo score between HC-interacting and 30 100-line non-interacting protein sets
+#Mann-Whitney U test to see if there is any significant difference between average semantic similarity of high-confidence interacting andrandomly generated non-interacting protein sets
 kruskal.test(score ~ cluster, data = my_data)
 
 pairwise.wilcox.test(my_data$score, my_data$cluster,
