@@ -56,13 +56,13 @@ Note that 100_random_networks will be a single file. To split the file
 
 ### Scripts to generate figures
 
-# Supplementary Figure1 (network improvement)
+#### Supplementary Figure1 (network improvement)
 
 Script needed two files to run
 
-(I) A table of proteins in each network with confidence scores. See the sample file [here] (https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file3.xlsx)
+(I) A table of proteins in each network with confidence scores. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file3.xlsx)
 
-(II) A table with p-values calculated in the first part of the script for manual p-value addition to the figure. See the sample file [here] (https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file4.xlsx)
+(II) A table with p-values calculated in the first part of the script for manual p-value addition to the figure. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file4.xlsx)
 
 ## Issues & Contacts
 If you have any questions or requirement of any other data from our manuscript, please feel free to contact me (shishir.gupta@uni-wuerzburg.de) or [Prof. Dr. Thomas Dandekar](https://www.biozentrum.uni-wuerzburg.de/bioinfo/research/groups/funct-genomics-systems-biology/people/thomas-dandekar/) (dandekar@biozentrum.uni-wuerzburg.de).
