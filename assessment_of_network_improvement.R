@@ -24,14 +24,14 @@ group_by(data, cluster) %>%
   )
 
 
-#Mann-whitney test to compare means of all 4 groups
+#Mann-whitney test to compare means of interactomes
 kruskal.test(cappic ~ cluster, data = data)
 
 pairwise.wilcox.test(data$cappic, data$cluster,
                      p.adjust.method = "BH")
 
 
-#figure_conflines_pvalues_top (the one used in the paper)
+#generate line plot
 
 ggline(data, x = "cluster", y = "cappic",
        add = c("mean_se", "jitter", "dot"),
