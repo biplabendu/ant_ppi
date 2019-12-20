@@ -64,7 +64,7 @@ Note that 100_random_networks will be a single file. To split the file
 
 (II) A table with p-values calculated in the first part of the script for manual p-value addition to the figure. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file4.xlsx)
 
-#### Supplementary FigureX (mf similarity)
+#### Figure 3
 
 [Script](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/MF_comparison.R) needed one file to run
 
