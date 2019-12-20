@@ -1,4 +1,4 @@
-##Comment1:Did the cappic scores increase after network filtering steps?
+##Improvement of confidence scores in interactomes after filtering steps
 setwd("path/to/inputfolder")
 
 library("readxl")
