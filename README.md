@@ -56,13 +56,11 @@ Note that 100_random_networks will be a single file. To split the file
 
 ### Scripts to generate figures:
 
-#### Supplementary Figure1 (network improvement)
+#### Figure 2
 
-[Script](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/assessment_of_network_improvement.R) needed two files to run
+[Script](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/densityplot_confidencesubsets.R) needed one file to run
 
-(I) A table of proteins in each network with confidence scores. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file3.xlsx)
-
-(II) A table with p-values calculated in the first part of the script for manual p-value addition to the figure. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file4.xlsx)
+(I) Table with one column of confidence subset classifications and one column with confidence scores. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file10.xlsx
 
 #### Figure 3
 
@@ -70,7 +68,15 @@ Note that 100_random_networks will be a single file. To split the file
 
 (I) A table with semantic similarity scores for each protein pair in PPI and randomly generated non-PPI networks. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file5.xlsx)
 
-#### Supplementary FigureX (topology vs. localization)
+#### Supplementary Figure1
+
+[Script](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/assessment_of_network_improvement.R) needed two files to run
+
+(I) A table of proteins in each network with confidence scores. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file3.xlsx)
+
+(II) A table with p-values calculated in the first part of the script for manual p-value addition to the figure. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file4.xlsx)
+
+#### Supplementary Figure2
 
 [Script](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/localization_hubs_bottlenecks.R) needed four files to run
 
@@ -82,11 +88,6 @@ Note that 100_random_networks will be a single file. To split the file
 
 (IV) Exact numbers and percentages of single and multiple-localization in hubs, non-hubs, bottlenecks, non-bottlenecks. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file9.xlsx)
 
-#### Figure X (density plot with confidence subsets in final interactome)
-
-[Script](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/densityplot_confidencesubsets.R) needed one file to run
-
-(I) Table with one column of confidence subset classifications and one column with confidence scores. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file10.xlsx
 
 ## Issues & Contacts
 If you have any questions or requirement of any other data from our manuscript, please feel free to contact me (shishir.gupta@uni-wuerzburg.de) or [Prof. Dr. Thomas Dandekar](https://www.biozentrum.uni-wuerzburg.de/bioinfo/research/groups/funct-genomics-systems-biology/people/thomas-dandekar/) (dandekar@biozentrum.uni-wuerzburg.de).
