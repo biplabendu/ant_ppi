@@ -1,4 +1,4 @@
-##comment4: Do hubs and bottlenecks have higher multiple localizations than non?
+##Comparison of localization tendencies of hubs and bottlenecks to non-hubs and non-bottlenecks, respectively
 setwd("path/to/inputfolder")
 
 library("readxl")
