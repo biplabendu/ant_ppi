@@ -54,7 +54,7 @@ Note that 100_random_networks will be a single file. To split the file
 ##### [random_network_generator.pl](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/random_network_generator.pl)
 ##### [split_networks.pl](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/split_networks.pl)
 
-### Scripts to generate figures
+### Scripts to generate figures:
 
 #### Supplementary Figure1 (network improvement)
 
@@ -64,13 +64,13 @@ Script [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/assessment_
 
 (II) A table with p-values calculated in the first part of the script for manual p-value addition to the figure. See the sample file [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file4.xlsx)
 
-### Supplementary FigureX (mf similarity)
+#### Supplementary FigureX (mf similarity)
 
 Script [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/MF_comparison.R) needed one file to run
 
 (I) A table with semantic similarity scores for each protein pair in PPI and randomly generated non-PPI networks. [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file5.xlsx)
 
-### Supplementary FigureX (topology vs. localization)
+#### Supplementary FigureX (topology vs. localization)
 
 Script [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/localization_hubs_bottlenecks.R) needed four files to run
 
@@ -82,7 +82,7 @@ Script [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/localizatio
 
 (IV) Exact numbers and percentages of single and multiple-localization in hubs, non-hubs, bottlenecks, non-bottlenecks [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/file9.xlsx)
 
-### Figure X (density plot with confidence subsets in final interactome)
+#### Figure X (density plot with confidence subsets in final interactome)
 
 Script [here](https://github.com/ShishirGupta-Wu/ant_ppi/blob/master/densityplot_confidencesubsets.R) needed one file to run
 
