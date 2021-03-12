@@ -1,0 +1,193 @@
+---
+title: "exploring_ant_ppi"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+# Goal_01
+- Run their code to see if it works on my computer.
+
+## 01_Rscript 
+assessment_of_network_improvement.R
+
+```{r}
+##Improvement of confidence scores in interactomes after filtering steps
+
+library("readxl")
+library(dplyr)
+library("ggsci")
+library("ggpubr")
+library("scales")
+
+#import input data
+data <- read_excel("./../file3.xlsx") #input file with cappic scores in each network
+p_values <- read_excel("./../file4.xlsx") #file with p-values calculated by Mann-Whitney U test
+
+# BD: change cluster to a factor
+
+#prepare data
+levels(data$cluster)
+
+group_by(data, cluster) %>%
+  summarise(
+    count = n(),
+    mean = mean(cappic, na.rm = TRUE),
+    sd = sd(cappic, na.rm = TRUE),
+    median = median(cappic, na.rm = TRUE),
+    IQR = IQR(cappic, na.rm = TRUE)
+  ) %>% View()
+
+
+#Mann-whitney test to compare means of interactomes
+kruskal.test(cappic ~ cluster, data = data)
+
+pairwise.wilcox.test(data$cappic, data$cluster,
+                     p.adjust.method = "BH")
+
+
+#generate line plot
+
+ggline(data, x = "cluster", y = "cappic",
+       add = c("mean_se", "jitter", "dot"),
+       order = c("Preliminary", "DDI-filtered", "Localization-filtered"),
+       ylab = "confidence score", xlab = FALSE, point.size = 1, size = 0.4, color = "black", point.color = "black", 
+       add.params = list(color = "cluster", fill_palette(palette = show_col(pal_npg("nrc")(3)))))+
+  scale_y_continuous(breaks = seq(0, 1, 0.1))+
+  geom_segment(aes(x=0, y=0.3, xend=4, yend =0.3), linetype = "dashed", size = 0.4)+
+  geom_segment(aes(x=0, y=0.7, xend=4, yend =0.7), linetype = "dashed", size = 0.4)+
+  geom_segment(aes(x=0, y=1, xend=4, yend =1), linetype = "dashed", size = 0.4)+
+  stat_pvalue_manual(
+    data = p_values, label = "p_value",
+    xmin = "group1", xmax = "group2",
+    y.position = "y_position", label.size = 4.5
+  )
+
+```
+
+
+## 02_Rscript
+densityplot_confidencesubsets.R
+
+```{r}
+library("readxl")
+library(plyr)
+library("ggpubr")
+library("scales")
+
+#prepare the data
+data <- read_excel("./../file10.xlsx", col_names = T) #input file with one column of confidence subset classifications and one column with CAPPIC scores
+
+#calculate means for all subsets
+mu <- ddply(data, "blocks", summarise, grp.mean=mean(CS))
+head(mu)
+
+ggplot(data, aes(x=CS, fill = blocks, palette = show_col(pal_npg("nrc")(3))))+
+  geom_density(alpha = 0.65, color = "black", size = 1.05)+
+  geom_vline(data=mu, aes(xintercept=grp.mean, color=blocks),
+             linetype="dashed", size = 1.4)
+
+```
+
+
+## 03_Rscript
+localization_hubs_bottlenecks.R
+
+```{r}
+##Comparison of localization tendencies of hubs and bottlenecks to non-hubs and non-bottlenecks, respectively
+setwd("/Users/biplabendudas/Documents/GitHub/ant_ppi/")
+
+library("readxl")
+library(dplyr)
+library("ggsci")
+library("ggpubr")
+library("scales")
+
+
+#prepare the data /import
+data_frame <- read_excel("file6.xlsx") #categorical localization classification for bottleneck and non-bottleneck proteins
+data_frame2 <- read_excel("file7.xlsx") #categorical localization classification for hub and non-hub proteins
+data_bar <- read_excel("file9.xlsx", row.names(1)) #exact numbers and percentages of single and multiple-localization in hubs, non-hubs, bottlenecks, non-bottlenecks
+pvalue <- read_excel("file8.xlsx") #p-values obtained by Fisher's exact test for the comparison of hubs vs. non-hubs and bottlenecks vs. non-bottlenecks
+
+
+#Stacked bar plot for proportion of multiple- and single-localized proteins in all four categories
+
+data_bar$name <- factor(data_bar$name, levels =  c("Hub", "Non-hub", "Bottleneck", "Non-bottleneck"))
+
+ggbarplot(data_bar, x = "name", y = "percentage", color = "black", width = 0.5,
+                  fill = "local", palette = show_col(pal_npg("nrc")(2))) +
+  stat_pvalue_manual(
+    data = pvalue,  label = "p_value",
+    xmin = "group1", xmax = "group2",
+    y.position = "y_position", bracket.size = 0.6)
+
+#Stacked bar plot with y-axis starting at 25
+
+ggbarplot(data_bar, x = "name", y = "percentage", ylim = c(25,105), color = "black", width = 0.5,
+          fill = "local", palette = show_col(pal_npg("nrc")(2))) +
+  stat_pvalue_manual(
+    data = pvalue,  label = "p_value",
+    xmin = "group1", xmax = "group2",
+    y.position = "y_position", bracket.size = 0.6)
+
+#Fisher's exact test to compare hubs vs. non-hubs / bottlenecks vs non-bottlenecks having more multi-localizations than single (categorical)
+
+table(data_frame$topology, data_frame$local)
+fisher.test(data_frame$topology, data_frame$local, alternative = "greater")
+
+table(data_frame2$topology, data_frame2$local)
+fisher.test(data_frame2$topology, data_frame2$local, alternative = "greater")
+
+```
+
+
+## 04_Rscript
+MF_comparison.R
+
+```{r}
+##Comparison of semantic similarity of molecular functions of interating vs. non-interacting proteins?
+setwd("/Users/biplabendudas/Documents/GitHub/ant_ppi/")
+
+library("readxl")
+library(dplyr)
+library("ggsci")
+library("ggpubr")
+library("scales")
+
+#prepare the data
+
+my_data <- read_excel("file5.xlsx") #input file with semantic MF similarity values for all interacting and non-interacting pairs
+levels(my_data$cluster)
+a<-group_by(my_data, cluster) %>%
+  summarise(
+    count = n(),
+    mean = mean(score, na.rm = TRUE),
+    sd = sd(score, na.rm = TRUE),
+    median = median(score, na.rm = TRUE),
+    IQR = IQR(score, na.rm = TRUE)
+  )
+b<-a %>% data.frame #can be used to see the whole data frame
+
+
+#Mann-Whitney U test to see if there is any significant difference between average semantic similarity of high-confidence interacting andrandomly generated non-interacting protein sets
+kruskal.test(score ~ as.factor(cluster), data = my_data)
+
+pairwise.wilcox.test(my_data$score, my_data$cluster,
+                     p.adjust.method = "BH", paired = FALSE)
+
+
+
+#line plot of all means
+
+ggline(my_data, x = "cluster", y = "score",
+       add = c("mean_se"), point.size = 2,
+       order = c("PPI", "nonPPI-1", "nonPPI-2", "nonPPI-3", "nonPPI-4", "nonPPI-5", "nonPPI-6", "nonPPI-7", 
+                 "nonPPI-8", "nonPPI-9", "nonPPI-10", "nonPPI-11", "nonPPI-12", "nonPPI-13", "nonPPI-14", "nonPPI-15", 
+                 "nonPPI-16", "nonPPI-17", "nonPPI-18", "nonPPI-19", "nonPPI-20", "nonPPI-21", "nonPPI-22", "nonPPI-23", 
+                 "nonPPI-24", "nonPPI-25", "nonPPI-26", "nonPPI-27", "nonPPI-28", "nonPPI-29", "nonPPI-30"), linetype = "dotted", size = 1,
+       ylab = "score", xlab = FALSE, color = "steelblue", point.color = "black")+ rotate_x_text(angle = 90,  hjust = NULL, vjust = NULL)
+
+```
+
+
